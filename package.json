@@ -1,0 +1,16 @@
+{
+  "name": "shootergame",
+  "version": "1.0.0",
+  "description": "Shooter Game",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "electron": "^42.4.1"
+  }
+}

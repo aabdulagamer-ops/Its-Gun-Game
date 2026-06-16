@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
+}
+
+canvas {
+    display: block;
+}
+
+/* HUD System */
+#hud {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    display: flex;
+    gap: 20px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.hud-panel {
+    background: rgba(10, 10, 10, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-left: 4px solid #ff3333;
+    padding: 15px 25px;
+    min-width: 120px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+}
+
+.label {
+    display: block;
+    color: #888;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.value {
+    display: block;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 900;
+    text-shadow: 2px 2px 0 #000;
+}
+
+/* Crosshair */
+#crosshair {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.ch-line {
+    position: absolute;
+    background: rgba(0, 255, 0, 0.8);
+    box-shadow: 0 0 5px #000;
+}
+.h-line { top: 11px; left: 0; width: 24px; height: 2px; }
+.v-line { top: 0; left: 11px; width: 2px; height: 24px; }
+
+/* Hit Marker */
+#hitMarker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 20px;
+    height: 20px;
+    background-image: linear-gradient(to right, transparent 8px, #fff 8px, #fff 12px, transparent 12px),
+                      linear-gradient(to bottom, transparent 8px, #fff 8px, #fff 12px, transparent 12px);
+    opacity: 0;
+    z-index: 11;
+    pointer-events: none;
+    transition: opacity 0.05s;
+}
+
+/* Menus & FX */
+#menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle, rgba(40,10,10,0.9) 0%, rgba(0,0,0,1) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+}
+
+#title {
+    color: #ff3333;
+    font-size: 70px;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+    text-shadow: 0 0 20px rgba(255,0,0,0.5);
+    text-transform: uppercase;
+}
+
+#startButton {
+    font-size: 28px;
+    font-weight: bold;
+    padding: 20px 60px;
+    background: #cc0000;
+    color: #fff;
+    cursor: pointer;
+    border: 2px solid #ff4444;
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.6);
+    margin-bottom: 40px;
+    transition: all 0.2s;
+    border-radius: 5px;
+}
+
+#startButton:hover {
+    background: #ff3333;
+    box-shadow: 0 0 30px rgba(255, 51, 51, 0.9);
+    transform: scale(1.05);
+}
+
+.instructions {
+    font-size: 18px;
+    color: #aaa;
+    text-align: center;
+    line-height: 2.5;
+}
+
+#damageFlash {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle, transparent 20%, rgba(255,0,0,0.6) 100%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 5;
+    transition: opacity 0.1s;
+}
