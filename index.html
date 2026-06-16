@@ -2,27 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Night Horror: Wave Survival</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zombie Survival FPS</title>
     <link rel="stylesheet" href="style.css">
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/PointerLockControls.js"></script>
 </head>
 <body>
-    <div id="flash"></div>
+    <div id="damageFlash"></div>
+    <div id="hitMarker"></div>
+
     <div id="hud">
-        <div class="stat">HP: <span id="hp">100</span></div>
-        <div class="stat">WAVE: <span id="wave">1</span></div>
-        <div class="stat">AMMO: <span id="ammo">30</span>/30</div>
-        <div id="boss-bar-container">
-            <div id="boss-label">BOSS HP</div>
-            <div id="boss-bar"><div id="boss-fill"></div></div>
+        <div class="hud-panel">
+            <span class="label">HEALTH</span>
+            <span class="value" id="hp">100</span>
+        </div>
+        <div class="hud-panel">
+            <span class="label">AMMO</span>
+            <span class="value"><span id="ammo">30</span><span style="font-size: 18px; color: #777;">/30</span></span>
+        </div>
+        <div class="hud-panel" style="margin-left: auto; border-left: 4px solid #ffd700;">
+            <span class="label">SCORE</span>
+            <span class="value" id="score" style="color: #ffd700;">0</span>
         </div>
     </div>
-    <div id="crosshair">+</div>
-    <div id="menu">
-        <h1 id="title">NIGHT HORROR</h1>
-        <div id="startButton">SURVIVE THE NIGHT</div>
+    
+    <div id="crosshair">
+        <div class="ch-line h-line"></div>
+        <div class="ch-line v-line"></div>
     </div>
+    
+    <div id="menu">
+        <h1 id="title">OUTBREAK SECTOR</h1>
+        <div id="startButton">CLICK TO DEPLOY</div>
+        <div class="instructions">
+            <strong>W A S D</strong> - Move &nbsp;&nbsp;|&nbsp;&nbsp; <strong>MOUSE</strong> - Look<br>
+            <strong>LEFT CLICK</strong> - Fire &nbsp;&nbsp;|&nbsp;&nbsp; <strong>R</strong> - Reload
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
